@@ -1,0 +1,31 @@
+techs:
+  - name: Apache Airflow
+    github_repo: apache/airflow
+    pypi_package: apache-airflow
+  - name: dbt
+    github_repo: dbt-labs/dbt-core
+    pypi_package: dbt-core
+  - name: Apache Spark
+    github_repo: apache/spark
+    pypi_package: pyspark
+  - name: Pandas
+    github_repo: pandas-dev/pandas
+    pypi_package: pandas
+  - name: SQLAlchemy
+    github_repo: sqlalchemy/sqlalchemy
+    pypi_package: SQLAlchemy
+  - name: Great Expectations
+    github_repo: great-expectations/great_expectations
+    pypi_package: great-expectations
+  - name: Prefect
+    github_repo: PrefectHQ/prefect
+    pypi_package: prefect
+  - name: Apache Kafka
+    github_repo: apache/kafka
+    pypi_package: kafka-python
+  - name: snowflake-connector-python
+    github_repo: snowflakedb/snowflake-connector-python
+    pypi_package: snowflake-connector-python
+  - name: DuckDB
+    github_repo: duckdb/duckdb
+    pypi_package: duckdb

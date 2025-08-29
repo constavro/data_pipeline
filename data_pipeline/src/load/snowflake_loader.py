@@ -3,7 +3,6 @@ import os
 from typing import Optional
 import pandas as pd
 from . import table_sql
-# from ..utils.env import snowflake_from_env
 import snowflake.connector
 from snowflake.connector.pandas_tools import write_pandas
 from dotenv import load_dotenv
@@ -37,7 +36,6 @@ def load_dataframe(df: pd.DataFrame, table: Optional[str] = None) -> None:
     try:
         with con.cursor() as cur:
             ensure_table_exists(cur)
-        # write_pandas handles creating a temp stage + COPY
         write_pandas(con, df, table_name=table, auto_create_table=False,use_logical_type=True)
         con.commit()
     finally:

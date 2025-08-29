@@ -4,7 +4,6 @@ import sys
 import yaml
 import pandas as pd
 from dataclasses import dataclass
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -67,7 +66,6 @@ def main() -> int:
 
 
     for t in techs:
-        print("trying",t)
         try:
             rec = collect_one(t, gh, pypi)
             records.append(rec)

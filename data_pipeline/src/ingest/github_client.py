@@ -15,7 +15,6 @@ class GitHubClient:
         })
         token = token or os.getenv("GITHUB_TOKEN")
         if token:
-            print(token)
             self.session.headers.update({"Authorization": f"Bearer {token}"})
         self.timeout = timeout
         self.max_retries = max_retries
@@ -30,10 +29,8 @@ class GitHubClient:
                 if resp.status_code == 403 and 'X-RateLimit-Remaining' in resp.headers and resp.headers.get('X-RateLimit-Remaining') == '0':
                     # Rate limited: sleep until reset
                     reset = int(resp.headers.get('X-RateLimit-Reset', '0'))
-                    max_req = int(resp.headers.get('x-ratelimit-limit'))
-                    print(max_req)
                     wait = max(reset - int(time.time()) + 1, 5)
-                    print(wait)
+                    print("Next try in ",wait," seconds.")
                     time.sleep(wait)
                     continue
                 if resp.status_code == 404:

@@ -26,5 +26,4 @@ TechRecordSchema = pa.DataFrameSchema(
 
 def validate_df(df: pd.DataFrame) -> pd.DataFrame:
     print("Validating schema")
-    print(df.dtypes)
     return TechRecordSchema.validate(df)
